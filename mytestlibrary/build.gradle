@@ -31,6 +31,19 @@ android {
     }
 }
 
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.rumble.mytestlibrary'
+                artifactId = 'mytestlibrary'
+                version = '1.0.1'
+            }
+        }
+    }
+}
+
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.7.0'
